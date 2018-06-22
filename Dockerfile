@@ -11,7 +11,7 @@
 # Copy to images tomcat path
 #COPY /target/SpringHibernateExample-1.0-SNAPSHOT.war /home/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war
 
-FROM tomcat:7-jre8-alpine
+FROM tomcat:8-jre8-alpine
 
 # copy the WAR bundle to tomcat
 COPY /target/SpringHibernateExample-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/app.war
