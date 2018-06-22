@@ -3,8 +3,8 @@ db:
   image: mysql:latest
   environment:
     MYSQL_ROOT_PASSWORD: nimda
-    MYSQL_DATABASE: mkyong
-    MYSQL_USER: mkyong_db_user
-    MYSQL_PASSWORD: mkyong_db_pass
+    MYSQL_DATABASE: example_db
+    MYSQL_USER: example_db_user
+    MYSQL_PASSWORD: example_db_pass
   volumes:
     - "./db:/docker-entrypoint-initdb.d"
