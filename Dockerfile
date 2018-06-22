@@ -9,12 +9,12 @@
 # Maintainer
 #MAINTAINER "acontrollu116@gmail.com""
 # Copy to images tomcat path
-#COPY /target/SpringHibernateExample-1.0.0.war /home/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war
+#COPY /target/SpringHibernateExample-1.0-SNAPSHOT.war /home/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war
 
 FROM tomcat:7-jre8-alpine
 
 # copy the WAR bundle to tomcat
-COPY /target/SpringHibernateExample-1.0.0.war /usr/local/tomcat/webapps/app.war
+COPY /target/SpringHibernateExample-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/app.war
 
 # command to run
 CMD ["catalina.sh", "run"]
