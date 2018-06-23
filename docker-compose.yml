@@ -7,3 +7,37 @@ db:
     MYSQL_PASSWORD: example_db_pass
   volumes:
     - "./db:/docker-entrypoint-initdb.d"
+	
+version : '3'
+services:
+  springappserver:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    ports:
+      - "8081:8080"
+    networks:
+      - mt-network
+    volumes:
+      - .:/vol/development
+    depends_on:
+      - mysqldbserver
+  mysqldbserver:
+    build:
+      context: .
+      dockerfile: db.dockerfile
+    networks:
+      - mt-network
+db:
+  image: mysql:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: example_db
+    MYSQL_USER: example_db_user
+    MYSQL_PASSWORD: example_db_pass
+  volumes:
+    - "./db:/docker-entrypoint-initdb.d"
+    container_name: databasedockerapp_db_1
+networks:
+  mt-network:
+    driver: bridge
