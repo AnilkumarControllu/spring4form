@@ -7,7 +7,3 @@ db:
     MYSQL_PASSWORD: example_db_pass
   volumes:
     - "./db:/docker-entrypoint-initdb.d"
-    container_name: databasedockerapp_db_1
-networks:
-  mt-network:
-    driver: bridge
