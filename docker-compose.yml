@@ -5,7 +5,5 @@ db:
   environment:
     MYSQL_ROOT_PASSWORD: root
     MYSQL_DATABASE: example_db
-    MYSQL_USER: example_db_user
-    MYSQL_PASSWORD: example_db_pass
   volumes:
     - "./db:/docker-entrypoint-initdb.d"
